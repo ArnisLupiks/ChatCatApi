@@ -6,28 +6,21 @@ class DB_Functions {
     //put your code here
     // constructor
     function __construct() {
-        include_once './php_includes/db_conn.php';
+        include_once 'php_includes/db_conn.php';
         // connecting to database
         $this->db = new DB_Connect();
         $this->db->connect();
     }
 
-    $data = json_decode(file_get_contents("php://input"));
-    $usrid =$data->uid;
 
-    // destructor
-    function __destruct() {
-
-    }
 
     /**
      * Get user by email and password
      */
-    //public function getUserByUid($email) {
+    public function getUserByUid($email) {
         $result = mysql_query("SELECT * FROM addGSMUser WHERE uid = '$usrid' LIMIT 1");
-        echo $result;
         return $result;
-    //}
+    }
 
     /**
      * Getting all users

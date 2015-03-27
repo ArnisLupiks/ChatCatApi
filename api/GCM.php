@@ -11,7 +11,7 @@ class GCM {
     /**
      * Sending Push Notification
      */
-    public function send_notification($registatoin_ids, $message, $title, $tagPush, $time_to_live) {
+    public function send_notification($registatoin_ids, $message, $title) {
         // include config
         include_once './php_includes/db_conn.php';
 
@@ -20,8 +20,8 @@ class GCM {
 
         $fields = array(
             'registration_ids' => $registatoin_ids,
-            'data' => array("message" => $message, "title" => $title, "tagPush" => $tagPush),
-	     'time_to_live' => number_format($time_to_live),
+            'data' => array("message" => $message, "title" => $title)
+
         );
 
         $headers = array(

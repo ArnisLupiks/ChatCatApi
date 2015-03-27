@@ -2,11 +2,11 @@
 
 
 define("DB_HOST", "localhost");
-define("DB_USER", "anarchy");
-define("DB_PASSWORD", "this@1985!");
+define("DB_USER", "root");
+define("DB_PASSWORD", "");
 define("DB_DATABASE", "chatcat");
 
 
-	define("GOOGLE_API_KEY", "AIzaSyCPNLSN5gt1U2944qcH6SNmpP6rNJClpLE");
+	define("GOOGLE_API_KEY", "AIzaSyAgL0pmlNB27Yoin0Kod9ou__ycq2eClnY");
 
 ?>
