@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 class DB_Functions {
 
     private $db;
@@ -13,6 +13,9 @@ class DB_Functions {
         $this->db->connect();
     }
 
+    $data = json_decode(file_get_contents("php://input"));
+    $usrid =$data->uid;
+
     // destructor
     function __destruct() {
 
@@ -21,8 +24,8 @@ class DB_Functions {
     /**
      * Get user by email and password
      */
-    public function getUserByEmail($email) {
-        $result = mysql_query("SELECT * FROM push_android WHERE email = '$email' LIMIT 1");
+    public function getUserByUid($email) {
+        $result = mysql_query("SELECT * FROM addGSMUser WHERE uid = '$usrid' LIMIT 1");
         return $result;
     }
 
@@ -30,7 +33,7 @@ class DB_Functions {
      * Getting all users
      */
     public function getAllUsers() {
-        $result = mysql_query("select * FROM push_android");
+        $result = mysql_query("select * FROM addGSMUser");
         return $result;
     }
 
@@ -38,7 +41,7 @@ class DB_Functions {
      * Check user is existed or not
      */
     public function isUserExisted($email) {
-        $result = mysql_query("SELECT email from push_android WHERE email = '$email'");
+        $result = mysql_query("SELECT email from addGSMUser WHERE uid = '$usrid'");
         $no_of_rows = mysql_num_rows($result);
         if ($no_of_rows > 0) {
             // user existed
