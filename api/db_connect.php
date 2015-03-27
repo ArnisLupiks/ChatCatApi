@@ -13,7 +13,7 @@ class DB_Connect {
 
     // Connecting to database
     public function connect() {
-        require_once './php_includes/db_config.php';
+        require_once './php_includes/db_conn.php';
         // connecting to mysql
         $con = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
         // selecting database

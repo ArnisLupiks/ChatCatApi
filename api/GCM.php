@@ -13,7 +13,7 @@ class GCM {
      */
     public function send_notification($registatoin_ids, $message, $title, $tagPush, $time_to_live) {
         // include config
-        include_once './php_includes/db_config.php';
+        include_once './php_includes/db_conn.php';
 
         // Set POST variables
         $url = 'https://android.googleapis.com/gcm/send';

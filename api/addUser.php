@@ -4,7 +4,7 @@
     require_once ("php_includes/db_conn.php");
 
     // Connecting to mysql database
-    $mysqli = $db_conn;
+    $mysqli =  mysqli_connect("localhost","anarchy","this@1985!","chatcat");;
     // Check for database connection error
     if (mysqli_connect_errno()) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
