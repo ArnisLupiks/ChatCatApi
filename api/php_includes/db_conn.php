@@ -6,6 +6,6 @@
 		echo mysqli_connect_error();
 		exit();
 	}
-
+	define("GOOGLE_API_KEY", "AIzaSyCPNLSN5gt1U2944qcH6SNmpP6rNJClpLE");
 
 ?>
