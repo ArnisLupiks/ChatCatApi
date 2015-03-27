@@ -1,5 +1,4 @@
 <?php
-header("Access-Control-Allow-Origin: *");
 class DB_Functions {
 
     private $db;
